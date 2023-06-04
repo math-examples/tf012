@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>TensorFlow.js Speech Commands Model Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="app.js"></script>
+</head>
+
+<body>
+      <button class="button" id='downloadAndLoadFiles'  onclick="downloadAndLoadFiles()"> download (2M)</button>
+   <script>
+
+const jsUrls = ['./tfjs', './speech-commands.js'];
+    const mjsUrls = ['./script.js'];
+
+const cssUrls = ['./math-examples.css'];
+
+function downloadAndLoadFiles(){
+    document.querySelector('#downloadAndLoadFiles').disabled = true;
+
+    loadFiles(jsUrls, '.js', 0);
+    loadFiles(mjsUrls, '.js', 'module');
+   loadFiles(cssUrls, '.css', 0);
+}
+
+  </script>
+  
+  <button class="button" id='loadModel' disabled>waiting</button>
+  
+<style>
+    #result>div {
+        float: left;
+        padding: 20px;
+    }
+</style>
+<div id="result"></div>
+
+</body>
+
+</html>
+
